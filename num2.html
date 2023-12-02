@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Задание №2</title>
+  </head>
+  <body>
+    <script>
+      var M = parseFloat(prompt("Введите М:")); // Строки
+      var N = parseFloat(prompt("Введите N:")); // Столбцы
+
+      matrix = [];
+
+      for (let i = 0; i < M; i++) {
+        array = [];
+        for (let j = 0; j < N; j++) {
+          array.push(Math.floor(Math.random() * 100));
+        }
+        matrix.push(array);
+      }
+      console.log(matrix);
+      matrix_1 = [];
+      for (let i = M - 1; i >= 0; i--) {
+        matrix_1.push(matrix[i]);
+      }
+      console.log("Матрица, отраженная по горизонтали: ", matrix_1);
+
+      new_matrix = [];
+      for (let i = 0; i < M; i++) {
+        array = [];
+        for (let j = N - 1; j >= 0; j--) {
+          array.push(matrix_1[i][j]);
+        }
+        new_matrix.push(array);
+      }
+      console.log(
+        "Матрица, отраженная по горизонтали и вертикали: ",
+        new_matrix
+      );
+    </script>
+  </body>
+</html>
